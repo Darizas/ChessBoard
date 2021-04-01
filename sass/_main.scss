@@ -1,0 +1,89 @@
+.wrapper {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-image: url(../img/wall.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-items: center;
+    justify-content: center;
+    .board {
+        display: flex;
+        width: 80vmin;
+        height: 80vmin;
+        background-color: white;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 10px black;
+        .matrix {
+            display: grid;
+            width: 75vmin;
+            height: 75vmin;
+            grid-template-areas:    '. top .'
+                                    'left patern right'
+                                    '. bottom .';
+            border: 0.5vmin solid black;
+            align-items: center;
+            justify-content: center;
+            .top {
+                grid-area: top;
+                text-align: center;
+                width: 65vmin;
+                .letter {
+                    transform: rotate(180deg);
+                }
+            }
+            .bottom {
+                grid-area: bottom;
+                text-align: center;
+                width: 65vmin;
+            }
+            .left {
+                grid-area: left;
+                height: 65vmin;
+            }
+            .right {
+                grid-area: right;
+                height: 65vmin;
+                .number {
+                    transform: rotate(180deg);
+                }
+            }
+            .patern {
+                grid-area: patern;
+                width: 65vmin;
+                height: 65vmin;
+                border: 1px solid #999;
+                .black, .white {
+                    float: left;
+                    width: calc((65vmin - 2px) / 8);
+                    height: calc((65vmin - 2px) / 8);
+                    font-size:6vmin;
+                    text-align:center;
+                    display: table-cell;
+                    vertical-align:middle;
+                }
+                .black {
+                    background-color: #999;
+                }
+                .white {
+                    background-color: #fff;
+                }
+            }
+            
+            .letter, .number {
+                font-size: 2.5vmin;
+                font-weight: bold;
+                text-transform: capitalize;
+            }
+            .letter {
+                float: left;
+                width: calc(100% / 8);
+            }
+            .number {
+                height: calc(100% / 8);
+                padding: calc((65vmin / 8 / 2) - 2vmin) calc(2.5vmin - 1.2vmin);
+            }
+        }
+    }
+}

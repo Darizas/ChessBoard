@@ -1,0 +1,172 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1.5;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background-image: url(../img/wall.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper .board {
+  display: flex;
+  width: 80vmin;
+  height: 80vmin;
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px black;
+}
+
+.wrapper .board .matrix {
+  display: grid;
+  width: 75vmin;
+  height: 75vmin;
+  grid-template-areas: '. top .' 'left patern right' '. bottom .';
+  border: 0.5vmin solid black;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper .board .matrix .top {
+  grid-area: top;
+  text-align: center;
+  width: 65vmin;
+}
+
+.wrapper .board .matrix .top .letter {
+  transform: rotate(180deg);
+}
+
+.wrapper .board .matrix .bottom {
+  grid-area: bottom;
+  text-align: center;
+  width: 65vmin;
+}
+
+.wrapper .board .matrix .left {
+  grid-area: left;
+  height: 65vmin;
+}
+
+.wrapper .board .matrix .right {
+  grid-area: right;
+  height: 65vmin;
+}
+
+.wrapper .board .matrix .right .number {
+  transform: rotate(180deg);
+}
+
+.wrapper .board .matrix .patern {
+  grid-area: patern;
+  width: 65vmin;
+  height: 65vmin;
+  border: 1px solid #999;
+}
+
+.wrapper .board .matrix .patern .black, .wrapper .board .matrix .patern .white {
+  float: left;
+  width: calc((65vmin - 2px) / 8);
+  height: calc((65vmin - 2px) / 8);
+  font-size: 6vmin;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.wrapper .board .matrix .patern .black {
+  background-color: #999;
+}
+
+.wrapper .board .matrix .patern .white {
+  background-color: #fff;
+}
+
+.wrapper .board .matrix .letter, .wrapper .board .matrix .number {
+  font-size: 2.5vmin;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.wrapper .board .matrix .letter {
+  float: left;
+  width: calc(100% / 8);
+}
+
+.wrapper .board .matrix .number {
+  height: calc(100% / 8);
+  padding: calc((65vmin / 8 / 2) - 2vmin) calc(2.5vmin - 1.2vmin);
+}
